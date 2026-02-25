@@ -1,25 +1,31 @@
 # mcp-geocoder
 
-MCP server for geocoding via [OpenStreetMap Nominatim](https://nominatim.openstreetmap.org). Address-to-coordinates, reverse geocoding, place search, and distance calculation. No API key required.
+Geocode addresses to coordinates and reverse geocode coordinates to addresses.
+
+> **Free API** — No API key required.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
-| `geocode` | Address/place name → lat/lng coordinates |
-| `reverse_geocode` | Lat/lng → address with configurable detail level |
-| `search_places` | Search for places, landmarks, POIs |
-| `lookup_osm` | Look up specific OpenStreetMap objects |
-| `calculate_distance` | Haversine distance between two points (km/mi/m) |
+| `geocode` | Convert an address or place name to latitude/longitude coordinates. |
+| `reverse_geocode` | Convert latitude/longitude coordinates to an address. |
+| `search_places` | Search for places, landmarks, or points of interest by name and/or type. |
+| `lookup_osm` | Look up a specific OpenStreetMap object by type and ID. |
+| `calculate_distance` | Calculate the straight-line distance between two coordinates (Haversine formula). |
 
-## Install
+## Installation
 
 ```bash
+git clone https://github.com/PetrefiedThunder/mcp-geocoder.git
+cd mcp-geocoder
 npm install
 npm run build
 ```
 
 ## Usage with Claude Desktop
+
+Add to your `claude_desktop_config.json`:
 
 ```json
 {
@@ -32,13 +38,11 @@ npm run build
 }
 ```
 
-## Rate Limits
+## Usage with npx
 
-Nominatim requires max 1 request/second. Enforced automatically.
-
-## No API Key Required
-
-Uses the free Nominatim public instance. For heavy usage, consider self-hosting.
+```bash
+npx mcp-geocoder
+```
 
 ## License
 
