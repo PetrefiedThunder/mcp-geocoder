@@ -1,6 +1,14 @@
 import { describe, it, expect } from "vitest";
+import { readFileSync } from "node:fs";
 
 describe("mcp-geocoder", () => {
+  it("requires the fixed MCP SDK minimum in package metadata", () => {
+    const pkg = JSON.parse(readFileSync(new URL("../../package.json", import.meta.url), "utf8"));
+    const lock = JSON.parse(readFileSync(new URL("../../package-lock.json", import.meta.url), "utf8"));
+    expect(pkg.dependencies["@modelcontextprotocol/sdk"]).toBe("^1.32.1");
+    expect(lock.packages[""].dependencies["@modelcontextprotocol/sdk"]).toBe("^1.32.1");
+  });
+
   it("should calculate haversine distance correctly", () => {
     // NYC to LA ~3944 km
     const R_KM = 6371;
