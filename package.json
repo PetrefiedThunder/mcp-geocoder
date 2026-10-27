@@ -1,7 +1,7 @@
 {
   "name": "mcp-geocoder",
   "version": "1.0.0",
-  "description": "MCP server for geocoding \u2014 address lookup, reverse geocoding, distance",
+  "description": "MCP server for geocoding — address lookup, reverse geocoding, distance",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
@@ -17,7 +17,7 @@
     "osm"
   ],
   "author": "",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "type": "module",
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
