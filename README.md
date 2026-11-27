@@ -46,4 +46,4 @@ npx mcp-geocoder
 
 ## License
 
-MIT
+Apache-2.0
